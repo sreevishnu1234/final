@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Log Analyzer</title>
+  <style>
+	  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+nav a.home {
+    color: #fff; 
+}
+h2 {
+text-align: center;
+color: black;
+}
+
+label {
+font-weight: bold;
+}
+
+input[type="number"] {
+width: 80px;
+}
+
+        #searchInput {
+            width: 50%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f8f8f8;
+            margin-bottom: 10px;
+        }
+
+input[type="file"] {
+margin-left: 10px;
+}
+
+button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #45a049;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+color: #45a049;
+margin-top: 20px;
+}
+
+table {
+border-collapse: collapse;
+width: 100%;
+margin-bottom: 20px;
+}
+
+th, td {
+border: 2px solid black;
+padding: 8px;
+text-align: left;
+}
+
+th {
+background-color: #45a049;
+color: black
+}
+
+p {
+font-size: 16px;
+margin-bottom: 10px;
+}
+  #tableSelector {
+        padding: 5px;
+        font-size: 35px;
+        background: none;
+        border: none;
+        color:#45a049;
+        font-weight: bold;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto; 
+        text-align: center; 
+    }
+
+    #tableSelector:hover {
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+select#sortOrder {
+    padding: 10px;
+    font-size: 16px;
+    background: #45a049;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+select#sortOrder:hover {
+    background-color: #45a049;
+}
+
+  </style>
+</head>
+<body>
+	<header>
+  <h1><center><b>Orchestrator Files Analyzer(.LOG)</b><center></h1>
+  		<nav>
+            <ul>
+                <li><a href="main.html" class="home">Home</a></li>
+            </ul>
+        </nav>
+  </header>
+  <br>
+  <br>
+  <br><br>
+
+  <!--<center><label for="numDays">Specify The Number of Days:</label>
+  <input type="number" id="numDays" min="1" /></center><br>-->
+  <center><input type="file" id="logFile" accept=".log" /></center><br>
+
+  <center><button onclick="analyzeLogFiles()"><b>Analyze</b></button>
+  <button onclick="ResetLogFiles()" ><b>Reset</b></button></center>
+  <br><center>
+  Use "Reset" button to clear log files and table from GUI.
+  </center><br>
+  <center><input type="text" id="searchInput" onkeyup="searchTables()" placeholder="Search If Require...."></center>
+  
+  <select id="sortOrder" onchange="sortTables()">
+  <option>Filter</option>
+  <option value="asc">Ascending</option>
+  <option value="desc">Descending</option>
+  </select>
+
+  <select id="tableSelector" onchange="toggleTable()">
+	  <option value=" ">Select One</option>
+    <option value="creationTable">Job Creation and Operations</option>
+    <option value="extractedTable">Extracted Field Values</option>
+  </select>
+  <table id="creationTable" style="display: none;">
+    <thead>
+      <tr>
+        <th>Job ID</th>
+        <th>Operation Performed</th>
+        <th>Status</th>
+        <th>Path</th>
+      </tr>
+    </thead>
+    <tbody id="creationTableBody">
+      
+    </tbody>
+  </table>
+ <table id="extractedTable" style="display: none;">
+	  <thead>
+		  <tr>
+			<th>Job ID</th>
+        	<th>Operation Performed</th>
+        	<th>Path</th>
+			<th>Name</th>
+        	<th>Description</th>
+        	<th>Result</th>
+		  </tr>
+	  </thead>
+	  <tbody id="extractedTableBody">
+	
+	  </tbody>
+  </table>
+
+  <br><br>
+  	<h2><center>Summary:</center></h2>
+    <h3><div id="summary"></div></h3>
+    <h3><div id="summary1"></div></h3>
+    <h3><div id="summary2"></div></h3>
+    <h3><div id="summary3"></div></h3>
+    <h3><div id="summary4"></div></h3>
+    <script src = "log.js"> </script>
+    <br><br><br>
+    <footer>
+        <p>© Created By Sreevishnu S K</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+nav a.home {
+    color: white; /* Blue color for Home link */
+}
+
+nav a.about {
+    color: #fff; /* Yellow color for About link */
+}
+
+nav a.contact {
+    color: #fff; /* Red color for Contact link */
+}
+h2 {
+text-align: center;
+color: Green;
+}
+
+section.main-content {
+    text-align: center;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+section.main-content h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+section.main-content p {
+    font-size: 18px;
+    color: #666;
+}
+
+a.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #45a049;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+
+
+section.main-content {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+section.main-content::before {
+    content: "LOGS"; /* Unicode for a file icon (you can use an icon font) */
+    font-family: FontAwesome;
+    font-size: 64px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+a.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+a.button:hover {
+    background-color: #45a049;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+section.main-content p.description {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+a.button.secondary {
+    background-color: #333;
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+    margin-left: 20px;
+}
+
+a.button.secondary:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
